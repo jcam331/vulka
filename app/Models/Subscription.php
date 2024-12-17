@@ -19,4 +19,24 @@ class Subscription extends Model
         'start_date',
         'end_date',
     ];
+
+    /**
+     * Get the user who is subscribed to the service.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\App\Models\User>
+     */
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the business associated with the subscription.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo<\App\Models\Business>
+     */
+    public function business(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Business::class);
+    }
 }

@@ -63,11 +63,51 @@
         }
 
         // Relations with Business model
-        public function businesses()
+        public function businesses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
         {
             return $this->belongsToMany(Business::class, 'business_user')
                 ->withPivot('role')
                 ->withTimestamps();
+        }
+
+        /**
+         * The requests that belong to the User
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Request>
+         */
+        public function requests(): \Illuminate\Database\Eloquent\Relations\HasMany
+        {
+            return $this->hasMany(Request::class);
+        }
+
+        /**
+         * The responses that belong to the User
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Response>
+         */
+        public function responses(): \Illuminate\Database\Eloquent\Relations\HasMany
+        {
+            return $this->hasMany(Response::class);
+        }
+
+        /**
+         * The reviews that belong to the User
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Review>
+         */
+        public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
+        {
+            return $this->hasMany(Review::class);
+        }
+
+        /**
+         * The subscriptions that belong to the User
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Subscription>
+         */
+        public function subscriptions(): \Illuminate\Database\Eloquent\Relations\HasMany
+        {
+            return $this->hasMany(Subscription::class);
         }
 
     }
