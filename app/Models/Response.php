@@ -9,4 +9,13 @@ class Response extends Model
 {
     /** @use HasFactory<\Database\Factories\ResponseFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'request_id',
+        'business_id',
+        'price',
+        'estimated_time',
+        'status'
+    ];
+
 }

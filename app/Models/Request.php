@@ -9,4 +9,10 @@ class Request extends Model
 {
     /** @use HasFactory<\Database\Factories\RequestFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'details',
+        'status'
+    ];
 }

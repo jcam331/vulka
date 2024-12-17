@@ -9,4 +9,14 @@ class Subscription extends Model
 {
     /** @use HasFactory<\Database\Factories\SubscriptionFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'business_id',
+        'stripe_customer_id',
+        'stripe_subscription_id',
+        'status',
+        'price',
+        'start_date',
+        'end_date',
+    ];
 }

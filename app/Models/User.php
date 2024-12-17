@@ -25,6 +25,8 @@
             'profile_details',
             'phone',
             'preferred_language',
+            'avatar',
+            'phone',
             'avatar'
         ];
 
