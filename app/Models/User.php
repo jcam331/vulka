@@ -39,8 +39,8 @@
         ];
 
         /**
-         * Los detalles del usuario se almacen como un array en la base de datos
-         * pero se obtiene como un JSON
+         * Los detalles del usuario se almacenan como un array en la base de datos
+         * y se obtiene como un JSON
          */
         protected $casts = [
             'profile_details' => 'array'
